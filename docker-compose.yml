@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+    todo-app-image-server:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        environment:
+            - DB_URI=${DB_URI}
+        container_name: todo-app-server
+        ports:
+            - "3001:3001"
